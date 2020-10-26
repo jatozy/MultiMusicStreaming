@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  multimusicstreaming_devenvironment:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: MultiMusicStreamingDevelopmentContainer
+    ports:
+      - 5901:5901
+    volumes:
+      - ../workspace:/workspace:rw
+      - ../sdk:/sdk:rw
+      - ./vncrc:/root/.vncrc:ro
